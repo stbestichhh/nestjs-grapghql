@@ -20,11 +20,11 @@ services:
       timeout: 30s
       retries: 5
 
-  blog:
+  app:
     build:
       context: ./
       dockerfile: ./Dockerfile.dev
-    container_name: blog
+    container_name: app
     env_file:
       - ./.env
     ports:

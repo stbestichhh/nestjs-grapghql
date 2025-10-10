@@ -36,7 +36,7 @@ A production-ready boilerplate/template for building scalable GraphQL APIs with 
 
 Before you begin, ensure you have the following installed:
 
-- **[Node.js](https://nodejs.org/)** (v16 or higher)
+- **[Node.js](https://nodejs.org/)** (v20 or higher)
 - **[npm](https://www.npmjs.com/)** or **[yarn](https://yarnpkg.com/)**
 - **[Docker](https://www.docker.com/products/docker-desktop)** (for Docker-based development)
 - **[PostgreSQL](https://www.postgresql.org/)** (if running without Docker)

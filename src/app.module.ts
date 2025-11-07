@@ -7,6 +7,7 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { AuthorModule } from './modules/author/author.module';
 import { BookModule } from './modules/book/book.module';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -16,6 +17,14 @@ import { BookModule } from './modules/book/book.module';
       autoSchemaFile: 'schema.gql',
       sortSchema: true,
       context: ({ req, res }) => ({ req, res }),
+    }),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        {
+          ttl: 60,
+          limit: 20,
+        },
+      ],
     }),
     AuthModule,
     AppConfigModule,

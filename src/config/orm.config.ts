@@ -1,4 +1,4 @@
-import { get } from '@nestled/config/lib/validate';
+import { get } from 'env-var';
 import DatabaseLogger from '../database/database.logger';
 import { CustomNamingStrategy } from './naming.strategy';
 import { DataSource, DataSourceOptions } from 'typeorm';

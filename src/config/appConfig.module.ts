@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestled/config';
 import { getTypeORMConfig } from './orm.config';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [

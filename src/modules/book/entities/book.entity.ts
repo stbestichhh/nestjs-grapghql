@@ -24,5 +24,6 @@ export class Book extends BaseSchema {
 
   @ManyToOne(() => Author, (author) => author.books, { eager: true })
   @JoinColumn({ name: 'author_id' })
+  @Field(() => Author)
   author: Author;
 }

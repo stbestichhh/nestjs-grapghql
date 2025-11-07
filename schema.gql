@@ -2,6 +2,29 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Author {
+  bio: String!
+  books: [Book]
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  firstName: String!
+  id: String!
+  lastName: String!
+  updatedAt: DateTime!
+}
+
+type Book {
+  author: Author!
+  createdAt: DateTime!
+  deletedAt: DateTime!
+  description: String!
+  genre: String!
+  id: String!
+  publicationYear: Int!
+  title: String!
+  updatedAt: DateTime!
+}
+
 input CreateUserInput {
   email: String!
   firstName: String!
@@ -25,7 +48,13 @@ type Mutation {
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
 
+input PublicationYearRangeInput {
+  from: Int
+  to: Int
+}
+
 type Query {
+  findAllBooks(filters: SearchFiltersInput, query: String): [Book!]!
   userById(id: String!): User!
   users: [User!]!
 }
@@ -34,6 +63,11 @@ type Query {
 enum Role {
   MODERATOR
   WRITER
+}
+
+input SearchFiltersInput {
+  genre: String
+  publicationYear: PublicationYearRangeInput
 }
 
 input UpdateUserInput {
